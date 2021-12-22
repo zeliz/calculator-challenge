@@ -1,130 +1,139 @@
 <template>
-    <div class="slds-grid slds-wrap">
-        <div class="slds-col slds-size_1-of-4">
-            <lightning-button label={btnLabel7} onclick={handleClick}></lightning-button>
+
+    <div class="slds-grid slds-wrap wrapper">
+        <div class="total slds-col slds-size_4-of-4">
+            {internalTotal}
+        </div>
+        <div class="working slds-col slds-size_3-of-4">
+            {workingTotal}
         </div>
         <div class="slds-col slds-size_1-of-4">
-            <lightning-button label={btnLabel8} onclick={handleClick}></lightning-button>
+            <c-calculator-button style="margin-left:2rem;"
+                my-label="C"
+                event-type="clr"
+                onbtnclick={handleButtonClick}
+            ></c-calculator-button>
         </div>
-        <div class="slds-col slds-size_1-of-4">
-            <lightning-button label={btnLabel9} onclick={handleClick}></lightning-button>
+
+        <div class="buttons slds-col slds-size_3-of-4">
+            <div class="slds-grid">
+                <template for:each={numRow1} for:item="rowItem">
+                    <div class="slds-col slds-size_1-of-3" key={rowItem.label}>
+                        <c-calculator-button 
+                            my-label={rowItem.label}
+                            event-type={rowItem.type}
+                            event-value={rowItem.value}
+                            onbtnclick={handleButtonClick}
+                        ></c-calculator-button>
+                    </div>
+                </template>
+            </div>
         </div>
+
         <div class="slds-col slds-size_1-of-4">
-4
+            <c-calculator-button style="margin-left:2rem;"
+                my-label="+"
+                event-type="opr"
+                event-value="plus"
+                onbtnclick={handleButtonClick}
+            ></c-calculator-button>
         </div>
-        <div class="slds-col slds-size_1-of-4">
-            <lightning-button label={btnLabel4} onclick={handleClick}></lightning-button>
+
+        <div class="buttons slds-col slds-size_3-of-4">
+            <div class="slds-grid">
+                <template for:each={numRow2} for:item="rowItem">
+                    <div class="slds-col slds-size_1-of-3" key={rowItem.label}>
+                        <c-calculator-button 
+                            my-label={rowItem.label}
+                            event-type={rowItem.type}
+                            event-value={rowItem.value}
+                            onbtnclick={handleButtonClick}
+                        ></c-calculator-button>
+                    </div>
+                </template>
+            </div>
         </div>
+
         <div class="slds-col slds-size_1-of-4">
-            <lightning-button label={btnLabel5} onclick={handleClick}></lightning-button>
+            <c-calculator-button style="margin-left:2rem;"
+                my-label="-"
+                event-type="opr"
+                event-value="minus"
+                onbtnclick={handleButtonClick}
+            ></c-calculator-button>
         </div>
-        <div class="slds-col slds-size_1-of-4">
-            <lightning-button label={btnLabel6} onclick={handleClick}></lightning-button>
+
+        <div class="buttons slds-col slds-size_3-of-4">
+            <div class="slds-grid">
+                <template for:each={numRow3} for:item="rowItem">
+                    <div class="slds-col slds-size_1-of-3" key={rowItem.label}>
+                        <c-calculator-button 
+                            my-label={rowItem.label}
+                            event-type={rowItem.type}
+                            event-value={rowItem.value}
+                            onbtnclick={handleButtonClick}
+                        ></c-calculator-button>
+                    </div>
+                </template>
+            </div>
         </div>
+
         <div class="slds-col slds-size_1-of-4">
-8
+            <c-calculator-button style="margin-left:2rem;"
+                my-label="X"
+                event-type="opr"
+                event-value="times"
+                onbtnclick={handleButtonClick}
+            ></c-calculator-button>
         </div>
-        <div class="slds-col slds-size_1-of-4">
-            <lightning-button label={btnLabel1} onclick={handleClick}></lightning-button>
+
+        <div class="buttons slds-col slds-size_3-of-4">
+            <div class="slds-grid">
+                <div class="slds-col slds-size_1-of-3">
+                    <c-calculator-button 
+                        my-label="0"
+                        event-type="num"
+                        event-value={zeroValue}
+                        onbtnclick={handleButtonClick}
+                    ></c-calculator-button>
+                </div>
+                <div class="slds-col slds-size_1-of-3" 
+                    style="font-size:0.75rem;margin-top:0.62rem;">
+                    <c-calculator-button
+                        my-label="+/-"
+                        event-type="tran"
+                        event-value="toggleSign"
+                        onbtnclick={handleButtonClick}
+                    ></c-calculator-button>
+                </div>
+                <div class="slds-col slds-size_1-of-3">
+                    <c-calculator-button 
+                        my-label="."
+                        event-type="tran"
+                        event-value="decimal"
+                        onbtnclick={handleButtonClick}
+                    ></c-calculator-button>
+                </div>
+            </div>
         </div>
+
         <div class="slds-col slds-size_1-of-4">
-            <lightning-button label={btnLabel2} onclick={handleClick}></lightning-button>
+            <c-calculator-button style="margin-left:2rem;"
+                my-label="/"
+                event-type="opr"
+                event-value="dividedBy"
+                onbtnclick={handleButtonClick}
+            ></c-calculator-button>
         </div>
-        <div class="slds-col slds-size_1-of-4">
-            <lightning-button label={btnLabel3} onclick={handleClick}></lightning-button>
-        </div>
-        <div class="slds-col slds-size_1-of-4">
-12
-        </div>
-        <div class="slds-col slds-size_1-of-4">
-13
-        </div>
-        <div class="slds-col slds-size_1-of-4">
-14
-        </div>
-        <div class="slds-col slds-size_1-of-4">
-15
-        </div>
-        <div class="slds-col slds-size_1-of-4">
-16
-        </div>
-        <div class="slds-col slds-size_1-of-4">
-17
-        </div>
-        <div class="slds-col slds-size_1-of-4">
-18
-        </div>
-        <div class="slds-col slds-size_1-of-4">
-19
-        </div>
-        <div class="slds-col slds-size_1-of-4">
-20
-        </div>
-        <div class="slds-col slds-size_1-of-4">
-21
-        </div>
-        <div class="slds-col slds-size_1-of-4">
-22
-        </div>
-        <div class="slds-col slds-size_1-of-4">
-23
-        </div>
-        <div class="slds-col slds-size_1-of-4">
-24
-        </div>
-        <div class="slds-col slds-size_1-of-4">
-25
-        </div>
-        <div class="slds-col slds-size_1-of-4">
-26
-        </div>
-        <div class="slds-col slds-size_1-of-4">
-27
-        </div>
-        <div class="slds-col slds-size_1-of-4">
-28
-        </div>
-        <div class="slds-col slds-size_1-of-4">
-29
-        </div>
-        <div class="slds-col slds-size_1-of-4">
-30
-        </div>
-        <div class="slds-col slds-size_1-of-4">
-31
-        </div>
-        <div class="slds-col slds-size_1-of-4">
-32
-        </div>
-        <div class="slds-col slds-size_1-of-4">
-33
-        </div>
-        <div class="slds-col slds-size_1-of-4">
-34
-        </div>
-        <div class="slds-col slds-size_1-of-4">
-35
-        </div>
-        <div class="slds-col slds-size_1-of-4">
-36
-        </div>
-        <div class="slds-col slds-size_1-of-4">
-37
-        </div>
-        <div class="slds-col slds-size_1-of-4">
-38
-        </div>
-        <div class="slds-col slds-size_1-of-4">
-39
-        </div>
-        <div class="slds-col slds-size_1-of-4">
-40
-        </div>
-        <div class="slds-col slds-size_1-of-4">
-41
-        </div>
-        <div class="slds-col slds-size_1-of-4">
-42
+
+        <div class="total slds-col slds-size_3-of-4"></div>
+        <div class="total slds-col slds-size_1-of-4">
+            <c-calculator-button style="margin-left:2rem;"
+                my-label="="
+                event-type="opr"
+                event-value="equal"
+                onbtnclick={handleButtonClick}
+            ></c-calculator-button>
         </div>
     </div>
 </template>

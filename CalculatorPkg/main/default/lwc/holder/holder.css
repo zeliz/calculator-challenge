@@ -1,0 +1,27 @@
+.wrapper {
+    background-color: cornflowerblue;
+    padding: 0.5rem;
+    width: 20rem;
+}
+
+.total {
+    text-align: left;
+    font-size: 1.5rem;
+    font-family: monospace;
+    font-weight: bold;
+    color: white;
+}
+
+.working {
+    text-align: right;
+    background-color: antiquewhite;
+    font-size: 2rem;
+    font-family: monospace;
+}
+
+.buttons {
+    text-align: center;
+    background-color:dimgray;
+    font-size: 2rem;
+    font-family: monospace;
+}

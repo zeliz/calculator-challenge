@@ -13,6 +13,8 @@
     "sfdcLoginUrl": "https://resilient-raccoon-vyykt5-dev-ed.my.salesforce.com/",
     "sourceApiVersion": "52.0",
     "packageAliases": {
-        "CalculatorPkg": "0Ho5f000000k9sfCAA"
+        "CalculatorPkg": "0Ho5f000000k9sfCAA",
+        "CalculatorPkg@0.1.0-1": "04t5f000000VvWFAA0",
+        "CalculatorPkg@0.1.0-2": "04t5f000000VykIAAS"
     }
 }
