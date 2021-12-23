@@ -1,0 +1,9 @@
+<template>
+    <div>
+        <template for:each={equationHistory} for:item="line">
+            <span key={line.index}>
+                {line.text}<br>
+            </span>
+        </template>
+    </div>
+</template>

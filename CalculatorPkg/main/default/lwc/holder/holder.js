@@ -9,6 +9,15 @@ export default class Holder extends LightningElement {
     // For fractions
     decimalPlaces = 0;
 
+    logEntry = "";
+
+    // Send a log entry to parent
+    logEvent() {
+        this.dispatchEvent( new CustomEvent("log", {
+            detail: this.logEntry
+        }));
+    }
+
     numRow1 = [
         new NumButton(7),
         new NumButton(8),
@@ -74,7 +83,29 @@ export default class Holder extends LightningElement {
                 console.log("Unknown transformation!");
         }
     }
+    logify() {
+        let temp = "";
+        switch (this.internalOperation) {
+            case "init":
+                break;
+            case "plus":
+                break;
+            case "minus":
+                break;
+            case "times":
+                break;
+            case "dividedBy":
+                break;
+            case "equal":
+                break;
+            default:
+
+        }
+        return temp;
+    }
     handleOperatorButton(value) {
+
+
         switch (this.internalOperation) {
             case "init":
                 // Store current number, clear for next input
